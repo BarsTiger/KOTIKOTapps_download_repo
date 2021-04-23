@@ -12,5 +12,5 @@ if not os.path.exists(offprojects):
 if not os.path.exists(launcherfiles):
     os.mkdir(launcherfiles)
 
-################### Updataing launcher #####################
+################### Self-updataing launcher #####################
 urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
