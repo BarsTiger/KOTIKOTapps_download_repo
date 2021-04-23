@@ -5,4 +5,3 @@ offprojects = launchfolder + "\OfficialProjects"
 
 if not os.path.exists(offprojects):
     os.mkdir(offprojects)
-#lolkek
