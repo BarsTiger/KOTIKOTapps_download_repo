@@ -2,7 +2,7 @@ import urllib.request, os
 
 launchfolder = os.getcwd()
 offprojects = launchfolder + "\OfficialProjects"
-launcherfiles = launchfolder + "\!LAUNCHERFILES"
+launcherfiles = offprojects + "\!LAUNCHERFILES"
 launchergithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/KOTIKOT_launcher.py"
 
 ################### Checking folders #####################
