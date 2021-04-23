@@ -14,3 +14,5 @@ if not os.path.exists(launcherfiles):
 
 ################### Self-updataing launcher #####################
 urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
+
+#ooo povezlo povezlo
