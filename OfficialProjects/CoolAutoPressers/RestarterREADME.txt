@@ -1,0 +1,1 @@
+To stop program, press and hold Ctrl + 1

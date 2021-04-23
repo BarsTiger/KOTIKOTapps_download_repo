@@ -1,0 +1,13 @@
+Henlo
+I am guide for installation
+Firstly, install Python. If you want, download latest version from official website. But I added installation file of Python 3.9
+If it won't work - download from https://www.python.org/
+
+!IMPORTANT!
+Check te box "install pip"
+
+After installing python and pip, run installEasygui.bat or in CMD print 
+>>> pip install easygui
+(without >>>)
+
+Cool, your copy of MeowArch works!
