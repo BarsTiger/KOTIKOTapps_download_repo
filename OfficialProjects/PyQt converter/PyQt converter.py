@@ -1,4 +1,4 @@
-import os, shutil, random, easygui, time
+import os, easygui, time
 from os.path import basename
 from subprocess import *
 slash = '\\'
@@ -9,15 +9,13 @@ if start == "Cancel":
     exit()
 
 if start == "Browse file":
-    thisFile = easygui.fileopenbox(filetypes=["ui"])
+    thisFile = easygui.fileopenbox(filetypes=["*.ui"])
 
 filename = basename(thisFile)[:-3]
 
-fileik = open('convert.txt', "w+")
+fileik = open('convert.bat', "w+")
 fileik.write('python -m PyQt5.uic.pyuic -x ' + thisFile + " -o " + os.path.dirname(thisFile) + slash + filename + ".py")
 fileik.close()
-
-shutil.move("convert.txt", "convert.bat")
 
 call('start convert.bat', shell=True)
 
