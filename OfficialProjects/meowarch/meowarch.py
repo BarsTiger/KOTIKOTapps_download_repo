@@ -1,5 +1,9 @@
-import os
-import easygui
+import os, subprocess, sys
+try:
+    import easygui
+except:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'easygui'])
+    import easygui
 import zipfile
 from os.path import basename
 import shutil
