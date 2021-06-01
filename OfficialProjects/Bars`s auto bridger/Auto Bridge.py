@@ -5,6 +5,8 @@ import keyboard
 import time
 danger = False
 
+print("AutoBridge started!")
+print("To enter SafeMode press Ctrl + 1")
 
 while True:
     if keyboard.is_pressed("ctrl") and keyboard.is_pressed("1") and not danger:
