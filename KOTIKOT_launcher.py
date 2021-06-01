@@ -1,7 +1,7 @@
 import urllib.request, os, time
 from subprocess import *
 from PyQt5 import *
-from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain import *
+
 
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
@@ -21,8 +21,8 @@ urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
 urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
 
 ################### Launching GUI #####################
-
 # Popen('python ' + launcherfiles + "KOTIKOTlauncherMain.py", shell=True)
+from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain import *
 
 if __name__ == "__main__":
     import sys
