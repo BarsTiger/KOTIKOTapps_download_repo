@@ -1,7 +1,7 @@
 import os, easygui, time
 from os.path import basename
 from subprocess import *
-slash = '\\'
+slash = '/'
 
 start = easygui.buttonbox("Open file (image, text, sound, what you want) to push archive in", "FilesConnector", ("Browse file", "Cancel"))
 

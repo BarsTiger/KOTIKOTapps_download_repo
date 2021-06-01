@@ -1,7 +1,7 @@
 import os, easygui, time
 from os.path import basename
 from subprocess import *
-slash = '\\'
+slash = '/'
 
 start = easygui.buttonbox("Open .ui file to convert it", "Converter", ("Browse file", "Cancel"))
 
