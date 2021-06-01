@@ -48,20 +48,21 @@ def launchAutoShipper():
     exit()
 
 def launchAutoBridger():
-    autoShipperDir = offprojects + "/AutoShipper/"
-    autoShipperUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoShipper/autoshipper.py"
+    autoBridgerDir = offprojects + "/AutoBridger/"
+    autoBridgerUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/Bars%60s%20auto%20bridger/AutoBridge.py"
 
-    if not os.path.exists(autoShipperDir):
-        os.mkdir(autoShipperDir)
+    if not os.path.exists(autoBridgerDir):
+        os.mkdir(autoBridgerDir)
 
-    autoShipper = autoShipperDir + "autoshipper.py"
-    urllib.request.urlretrieve(autoShipperUrl, autoShipper)
+    autoBridger = autoBridgerDir + "AutoBridge.py"
+    urllib.request.urlretrieve(autoBridgerUrl, autoBridger)
 
-    Popen('python ' + autoShipper, shell=True)
+    Popen('python ' + autoBridger, shell=True)
+    exit()
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
-
+ui.pushButton_2.clicked.connect(launchAutoBridger)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
