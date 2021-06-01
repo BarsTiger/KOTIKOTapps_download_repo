@@ -2,7 +2,6 @@ import urllib.request, os, time, sys
 from subprocess import *
 from PyQt5 import *
 
-
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
 launcherfiles = offprojects + "/LAUNCHERFILES/"
@@ -18,7 +17,7 @@ if not os.path.exists(launcherfiles):
 
 ################### Self-updataing launcher #####################
 # urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+# urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
 
 ################### Launching GUI #####################
 # Popen('python ' + launcherfiles + "KOTIKOTlauncherMain.py", shell=True)
@@ -32,7 +31,29 @@ KOTIKOTlauncher.show()
 
 ################### Launching programs (func) #####################
 def launchAutoShipper():
-    print("meow")
+    autoShipperDir = offprojects + "/AutoShipper/"
+    autoShipperUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoShipper/autoshipper.py"
+
+    if not os.path.exists(autoShipperDir):
+        os.mkdir(autoShipperDir)
+
+    autoShipper = autoShipperDir + "autoshipper.py"
+    urllib.request.urlretrieve(autoShipperUrl, autoShipper)
+
+    Popen('python ' + autoShipper, shell=True)
+    exit()
+
+def launchAutoBridger():
+    autoShipperDir = offprojects + "/AutoShipper/"
+    autoShipperUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoShipper/autoshipper.py"
+
+    if not os.path.exists(autoShipperDir):
+        os.mkdir(autoShipperDir)
+
+    autoShipper = autoShipperDir + "autoshipper.py"
+    urllib.request.urlretrieve(autoShipperUrl, autoShipper)
+
+    Popen('python ' + autoShipper, shell=True)
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
