@@ -1,6 +1,12 @@
-import os, easygui, time
+import os, time, subprocess, sys
 from os.path import basename
 from subprocess import *
+try:
+    import easygui
+except:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'easygui'])
+    import easygui
+
 slash = '/'
 
 start = easygui.buttonbox("Open file (image, text, sound, what you want) to push archive in", "FilesConnector", ("Browse file", "Cancel"))
