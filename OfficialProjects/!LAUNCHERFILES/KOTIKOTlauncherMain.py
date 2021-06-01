@@ -87,10 +87,10 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_1.setText(_translate("KOTIKOTlauncher", "AutoShipper"))
         self.pushButton_2.setText(_translate("KOTIKOTlauncher", "Bars`s auto\nbridger"))
         self.pushButton_3.setText(_translate("KOTIKOTlauncher", "CatBench"))
-        self.pushButton_4.setText(_translate("KOTIKOTlauncher", "CoolAutoPressers"))
+        self.pushButton_4.setText(_translate("KOTIKOTlauncher", "CoolAuto\nPressers"))
         self.pushButton_5.setText(_translate("KOTIKOTlauncher", "FilesConnector"))
         self.pushButton_6.setText(_translate("KOTIKOTlauncher", "Meowarch"))
-        self.pushButton_7.setText(_translate("KOTIKOTlauncher", "PyQt converter"))
+        self.pushButton_7.setText(_translate("KOTIKOTlauncher", "PyQt\nconverter"))
         self.pushButton_8.setText(_translate("KOTIKOTlauncher", "fileGenerator"))
 
 
