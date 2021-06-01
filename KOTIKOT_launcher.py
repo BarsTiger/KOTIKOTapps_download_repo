@@ -16,11 +16,12 @@ if not os.path.exists(launcherfiles):
     os.mkdir(launcherfiles)
 
 ################### Self-updataing launcher #####################
-# urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-# urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
+urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
 
 ################### Launching GUI #####################
-# Popen('python ' + launcherfiles + "KOTIKOTlauncherMain.py", shell=True)
+Popen('python ' + launcherfiles + "KOTIKOTlauncherReminder.py", shell=True)
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
 
 app = kkui.QtWidgets.QApplication(sys.argv)
