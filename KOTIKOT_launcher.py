@@ -99,17 +99,17 @@ def launchFilesConnector():
     Popen('python ' + FilesConnector, shell=True)
     exit()
 
-def launchFilesConnector():
-    FilesConnectorDir = offprojects + "/FilesConnector/"
-    FilesConnectorUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/FilesConnector/FilesConnector.py"
+def launchPyQtConverter():
+    PyQtConverterDir = offprojects + "/PyQtConverter/"
+    PyQtConverterUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/PyQtConverter/PyQtConverter.py"
 
-    if not os.path.exists(FilesConnectorDir):
-        os.mkdir(FilesConnectorDir)
+    if not os.path.exists(PyQtConverterDir):
+        os.mkdir(PyQtConverterDir)
 
-    FilesConnector = FilesConnectorDir + "FilesConnector.py"
-    urllib.request.urlretrieve(FilesConnectorUrl, FilesConnector)
+    PyQtConverter = PyQtConverterDir + "PyQtConverter.py"
+    urllib.request.urlretrieve(PyQtConverterUrl, PyQtConverter)
 
-    Popen('python ' + FilesConnector, shell=True)
+    Popen('python ' + PyQtConverter, shell=True)
     exit()
 
 ################### Checking buttons #####################
