@@ -1,4 +1,4 @@
-import urllib.request, os
+import urllib.request, os, time
 from subprocess import *
 from PyQt5 import *
 
