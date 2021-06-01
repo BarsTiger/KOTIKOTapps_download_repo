@@ -1,9 +1,18 @@
 hotkeyToBridge = "="
-
-from pyautogui import *
-import keyboard
+import subprocess, sys
 import time
 danger = False
+try:
+    import keyboard
+except:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'keyboard'])
+    import keyboard
+
+try:
+    from pyautogui import *
+except:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", 'pyautogui'])
+    from pyautogui import *
 
 print("AutoBridge started!")
 print("To enter SafeMode press Ctrl + 1")

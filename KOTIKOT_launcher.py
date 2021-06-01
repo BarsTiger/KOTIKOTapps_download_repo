@@ -2,12 +2,6 @@ import urllib.request, os, time, sys, subprocess
 from subprocess import *
 from PyQt5 import *
 
-################### Checking modules #####################
-try:
-    import keyboard
-except:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", 'keyboard'])
-
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
 launcherfiles = offprojects + "/LAUNCHERFILES/"
