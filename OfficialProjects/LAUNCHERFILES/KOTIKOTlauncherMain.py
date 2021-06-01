@@ -83,7 +83,7 @@ class Ui_KOTIKOTlauncher(object):
 
     def retranslateUi(self, KOTIKOTlauncher):
         _translate = QtCore.QCoreApplication.translate
-        KOTIKOTlauncher.setWindowTitle(_translate("KOTIKOTlauncher", "MainWindow"))
+        KOTIKOTlauncher.setWindowTitle(_translate("KOTIKOTlauncher", "KOTIKOTlauncher"))
         self.pushButton_1.setText(_translate("KOTIKOTlauncher", "AutoShipper"))
         self.pushButton_2.setText(_translate("KOTIKOTlauncher", "Bars`s auto\nbridger"))
         self.pushButton_3.setText(_translate("KOTIKOTlauncher", "CatBench"))
