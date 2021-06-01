@@ -73,10 +73,50 @@ def launchCatBench():
     Popen('python ' + CatBench, shell=True)
     exit()
 
+def launchautoPageRestarter():
+    autoPageRestarterDir = offprojects + "/autoPageRestarter/"
+    autoPageRestarterUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/CoolAutoPressers/autoPageRestarter.py"
+
+    if not os.path.exists(autoPageRestarterDir):
+        os.mkdir(autoPageRestarterDir)
+
+    autoPageRestarter = autoPageRestarterDir + "autoPageRestarter.py"
+    urllib.request.urlretrieve(autoPageRestarterUrl, autoPageRestarter)
+
+    Popen('python ' + autoPageRestarter, shell=True)
+    exit()
+
+def launchFilesConnector():
+    FilesConnectorDir = offprojects + "/FilesConnector/"
+    FilesConnectorUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/FilesConnector/FilesConnector.py"
+
+    if not os.path.exists(FilesConnectorDir):
+        os.mkdir(FilesConnectorDir)
+
+    FilesConnector = FilesConnectorDir + "FilesConnector.py"
+    urllib.request.urlretrieve(FilesConnectorUrl, FilesConnector)
+
+    Popen('python ' + FilesConnector, shell=True)
+    exit()
+
+def launchFilesConnector():
+    FilesConnectorDir = offprojects + "/FilesConnector/"
+    FilesConnectorUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/FilesConnector/FilesConnector.py"
+
+    if not os.path.exists(FilesConnectorDir):
+        os.mkdir(FilesConnectorDir)
+
+    FilesConnector = FilesConnectorDir + "FilesConnector.py"
+    urllib.request.urlretrieve(FilesConnectorUrl, FilesConnector)
+
+    Popen('python ' + FilesConnector, shell=True)
+    exit()
+
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
 ui.pushButton_3.clicked.connect(launchCatBench)
+ui.pushButton_3.clicked.connect(launchautoPageRestarter)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
