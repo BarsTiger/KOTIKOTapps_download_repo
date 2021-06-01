@@ -49,7 +49,7 @@ def launchAutoShipper():
 
 def launchAutoBridger():
     autoBridgerDir = offprojects + "/AutoBridger/"
-    autoBridgerUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/Bars%60s%20auto%20bridger/AutoBridge.py"
+    autoBridgerUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/BarsAutoBridger/AutoBridge.py"
 
     if not os.path.exists(autoBridgerDir):
         os.mkdir(autoBridgerDir)
