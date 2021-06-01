@@ -20,4 +20,5 @@ urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
 urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
 
 ################### Launching GUI #####################
-call('start python ' + launcherfiles + "KOTIKOTlauncherMain.py", shell=True)
+# call('start python ' + launcherfiles + "KOTIKOTlauncherMain.py", shell=True)
+Popen('python ' + launcherfiles + "KOTIKOTlauncherMain.py")

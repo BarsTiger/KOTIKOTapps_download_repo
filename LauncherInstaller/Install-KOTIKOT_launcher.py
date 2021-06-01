@@ -1,7 +1,7 @@
 import urllib.request, os, subprocess, sys
 
 launchfolder = os.getcwd()
-kkapps = launchfolder + "/KOTIKOT apps"
+kkapps = launchfolder + "/KOTIKOTapps"
 
 if not os.path.exists(kkapps):
     os.mkdir(kkapps)
