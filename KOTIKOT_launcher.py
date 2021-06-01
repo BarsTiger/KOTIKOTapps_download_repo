@@ -99,6 +99,19 @@ def launchFilesConnector():
     Popen('python ' + FilesConnector, shell=True)
     exit()
 
+def launchMeowarch():
+    meowarchDir = offprojects + "/meowarch/"
+    meowarchUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/meowarch/meowarch.py"
+
+    if not os.path.exists(meowarchDir):
+        os.mkdir(meowarchDir)
+
+    meowarch = meowarchDir + "meowarch.py"
+    urllib.request.urlretrieve(meowarchUrl, meowarch)
+
+    Popen('python ' + meowarch, shell=True)
+    exit()
+
 def launchPyQtConverter():
     PyQtConverterDir = offprojects + "/PyQtConverter/"
     PyQtConverterUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/PyQtConverter/PyQtConverter.py"
@@ -118,7 +131,8 @@ ui.pushButton_2.clicked.connect(launchAutoBridger)
 ui.pushButton_3.clicked.connect(launchCatBench)
 ui.pushButton_4.clicked.connect(launchautoPageRestarter)
 ui.pushButton_5.clicked.connect(launchFilesConnector)
-ui.pushButton_6.clicked.connect(launchPyQtConverter)
+ui.pushButton_6.clicked.connect(launchMeowarch)
+ui.pushButton_7.clicked.connect(launchPyQtConverter)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
