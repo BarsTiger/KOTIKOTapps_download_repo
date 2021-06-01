@@ -3,7 +3,7 @@ import easygui
 import zipfile
 from os.path import basename
 import shutil
-slash = '\\'
+slash = '/'
 ziporunzip = easygui.buttonbox("What do you want to do?", "Meowarch", ("Archive file", "Unarchive file", "Cancel"))
 
 if ziporunzip == "Cancel":
