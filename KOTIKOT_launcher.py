@@ -125,6 +125,19 @@ def launchPyQtConverter():
     Popen('python ' + PyQtConverter, shell=True)
     exit()
 
+def launchfileGenerator():
+    fileGeneratorDir = offprojects + "/fileGenerator/"
+    fileGeneratorUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/RandomBigOrSmallFileCreator/fileGenerator.py"
+
+    if not os.path.exists(fileGeneratorDir):
+        os.mkdir(fileGeneratorDir)
+
+    fileGenerator = fileGeneratorDir + "fileGenerator.py"
+    urllib.request.urlretrieve(fileGeneratorUrl, fileGenerator)
+
+    Popen('python ' + fileGenerator, shell=True)
+    exit()
+
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
@@ -133,6 +146,7 @@ ui.pushButton_4.clicked.connect(launchautoPageRestarter)
 ui.pushButton_5.clicked.connect(launchFilesConnector)
 ui.pushButton_6.clicked.connect(launchMeowarch)
 ui.pushButton_7.clicked.connect(launchPyQtConverter)
+ui.pushButton_8.clicked.connect(launchfileGenerator)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
