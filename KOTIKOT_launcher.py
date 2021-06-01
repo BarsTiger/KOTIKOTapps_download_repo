@@ -60,9 +60,23 @@ def launchAutoBridger():
     Popen('python ' + autoBridger, shell=True)
     exit()
 
+def launchCatBench():
+    CatBenchDir = offprojects + "/CatBench/"
+    CatBenchUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/CatBench/CatBench.py"
+
+    if not os.path.exists(CatBenchDir):
+        os.mkdir(CatBenchDir)
+
+    CatBench = CatBenchDir + "CatBench.py"
+    urllib.request.urlretrieve(CatBenchUrl, CatBench)
+
+    Popen('python ' + CatBench, shell=True)
+    exit()
+
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
+ui.pushButton_2.clicked.connect(launchCatBench)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
