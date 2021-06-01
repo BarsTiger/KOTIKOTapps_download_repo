@@ -20,10 +20,9 @@ if not os.path.exists(launcherfiles):
 ################### Self-updataing launcher #####################
 urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
 urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
-urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
+urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
 
 ################### Launching GUI #####################
-Popen('python ' + launcherfiles + "KOTIKOTlauncherReminder.py", shell=True)
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
 
 app = kkui.QtWidgets.QApplication(sys.argv)
@@ -31,6 +30,8 @@ KOTIKOTlauncher = kkui.QtWidgets.QMainWindow()
 ui = kkui.Ui_KOTIKOTlauncher()
 ui.setupUi(KOTIKOTlauncher)
 KOTIKOTlauncher.show()
+
+Popen('python ' + launcherfiles + "KOTIKOTlauncherReminder.py", shell=True)
 
 ################### Launching programs (func) #####################
 def launchAutoShipper():
