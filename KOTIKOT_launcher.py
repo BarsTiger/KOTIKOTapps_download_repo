@@ -116,7 +116,9 @@ def launchPyQtConverter():
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
 ui.pushButton_3.clicked.connect(launchCatBench)
-ui.pushButton_3.clicked.connect(launchautoPageRestarter)
+ui.pushButton_4.clicked.connect(launchautoPageRestarter)
+ui.pushButton_5.clicked.connect(launchFilesConnector)
+ui.pushButton_6.clicked.connect(launchPyQtConverter)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
