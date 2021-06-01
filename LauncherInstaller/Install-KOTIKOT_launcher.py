@@ -1,4 +1,4 @@
-import urllib.request, os
+import urllib.request, os, subprocess, sys
 
 launchfolder = os.getcwd()
 kkapps = launchfolder + "/KOTIKOT apps"
@@ -8,3 +8,5 @@ if not os.path.exists(kkapps):
 
 launcherurl = 'https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/KOTIKOT_launcher.py'
 urllib.request.urlretrieve(launcherurl, kkapps + "/KOTIKOT_launcher.py")
+
+subprocess.check_call([sys.executable, "-m", "pip install PyQt5"])
