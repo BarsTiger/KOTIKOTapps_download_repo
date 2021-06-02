@@ -1,0 +1,3 @@
+Скопируйте файл Install KOTIKOT_launcher and Python x.x.x.bat в папку с вашими приложениями
+(например, ProgramFiles или где удобнее, но в ProgramFiles работает нестабильно, лучше потом скопируйте папку KOTIKOTapps туда)
+Запустите его
