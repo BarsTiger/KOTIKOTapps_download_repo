@@ -44,8 +44,7 @@ def launchAutoShipper():
     autoShipper = autoShipperDir + "autoshipper.py"
     urllib.request.urlretrieve(autoShipperUrl, autoShipper)
 
-    Popen('python ' + autoShipper, shell=True)
-    exit()
+    os.system("python " + autoShipper)
 
 def launchAutoBridger():
     autoBridgerDir = offprojects + "/AutoBridger/"
@@ -57,8 +56,7 @@ def launchAutoBridger():
     autoBridger = autoBridgerDir + "AutoBridge.py"
     urllib.request.urlretrieve(autoBridgerUrl, autoBridger)
 
-    Popen('python ' + autoBridger, shell=True)
-    exit()
+    os.system("python " + autoBridger)
 
 def launchCatBench():
     CatBenchDir = offprojects + "/CatBench/"
@@ -70,8 +68,7 @@ def launchCatBench():
     CatBench = CatBenchDir + "CatBench.py"
     urllib.request.urlretrieve(CatBenchUrl, CatBench)
 
-    Popen('python ' + CatBench, shell=True)
-    exit()
+    os.system("python " + CatBench)
 
 def launchautoPageRestarter():
     autoPageRestarterDir = offprojects + "/autoPageRestarter/"
@@ -83,8 +80,7 @@ def launchautoPageRestarter():
     autoPageRestarter = autoPageRestarterDir + "autoPageRestarter.py"
     urllib.request.urlretrieve(autoPageRestarterUrl, autoPageRestarter)
 
-    Popen('python ' + autoPageRestarter, shell=True)
-    exit()
+    os.system("python " + autoPageRestarter)
 
 def launchFilesConnector():
     FilesConnectorDir = offprojects + "/FilesConnector/"
@@ -96,8 +92,7 @@ def launchFilesConnector():
     FilesConnector = FilesConnectorDir + "FilesConnector.py"
     urllib.request.urlretrieve(FilesConnectorUrl, FilesConnector)
 
-    Popen('python ' + FilesConnector, shell=True)
-    exit()
+    os.system("python " + FilesConnector)
 
 def launchMeowarch():
     meowarchDir = offprojects + "/meowarch/"
@@ -109,8 +104,7 @@ def launchMeowarch():
     meowarch = meowarchDir + "meowarch.py"
     urllib.request.urlretrieve(meowarchUrl, meowarch)
 
-    Popen('python ' + meowarch, shell=True)
-    exit()
+    os.system("python " + meowarch)
 
 def launchPyQtConverter():
     PyQtConverterDir = offprojects + "/PyQtConverter/"
@@ -122,8 +116,7 @@ def launchPyQtConverter():
     PyQtConverter = PyQtConverterDir + "PyQtConverter.py"
     urllib.request.urlretrieve(PyQtConverterUrl, PyQtConverter)
 
-    Popen('python ' + PyQtConverter, shell=True)
-    exit()
+    os.system("python " + PyQtConverter)
 
 def launchfileGenerator():
     fileGeneratorDir = offprojects + "/fileGenerator/"
@@ -135,8 +128,7 @@ def launchfileGenerator():
     fileGenerator = fileGeneratorDir + "fileGenerator.py"
     urllib.request.urlretrieve(fileGeneratorUrl, fileGenerator)
 
-    Popen('python ' + fileGenerator, shell=True)
-    exit()
+    os.system("python " + fileGenerator)
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
