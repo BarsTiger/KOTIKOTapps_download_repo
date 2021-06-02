@@ -6,8 +6,8 @@ ping -n 3 localhost > nul
 ping -n 3 localhost > nul
 ping -n 3 localhost > nul
 @echo ----- Downloadig Python from official site --------------------------------------------------
-@echo ----- python.org/ftp/python/3.9.4/python-3.9.4-amd64.exe ------------------------------------
-powershell -command iwr https://www.python.org/ftp/python/3.9.4/python-3.9.4-amd64.exe -OutFile python-3.9.4-amd64.exe
+@echo ----- python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe ------------------------------------
+powershell -command iwr https://www.python.org/ftp/python/3.9.5/python-3.9.5-amd64.exe -OutFile python-3.9.5-amd64.exe
 @echo ----- After installing python, run Install-KOTIKOT_launcher to install KOTIKOT_launcher -----
 @echo off
 ping -n 3 localhost > nul
