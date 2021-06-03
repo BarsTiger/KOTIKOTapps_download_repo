@@ -5,7 +5,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(153, 102)
         self.verticalLayoutWidget = QtWidgets.QWidget(Form)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 152, 101))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 300, 101))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(7, 7, 7, 7)

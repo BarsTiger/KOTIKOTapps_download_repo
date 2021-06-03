@@ -34,7 +34,6 @@ ui = kkui.Ui_KOTIKOTlauncher()
 ui.setupUi(KOTIKOTlauncher)
 KOTIKOTlauncher.show()
 
-settings = kkset.QtWidgets.QApplication(sys.argv)
 KOTIKOTsettings = kkset.QtWidgets.QMainWindow()
 uiset = kkset.Ui_Form()
 uiset.setupUi(KOTIKOTsettings)
@@ -155,4 +154,3 @@ ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
-sys.exit(settings.exec_())
