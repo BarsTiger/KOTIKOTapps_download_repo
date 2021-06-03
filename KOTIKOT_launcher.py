@@ -18,9 +18,9 @@ if not os.path.exists(launcherfiles):
     os.mkdir(launcherfiles)
 
 ################### Self-updataing launcher #####################
-#urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-#urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
-#urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
+urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
+urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
 
 ################### Launching GUI #####################
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
@@ -36,11 +36,13 @@ settings = kkset.QtWidgets.QApplication(sys.argv)
 KOTIKOTsettings = kkset.QtWidgets.QMainWindow()
 uiset = kkset.Ui_Form()
 uiset.setupUi(KOTIKOTsettings)
-# KOTIKOTsettings.show()
 
 Popen('python ' + launcherfiles + "KOTIKOTlauncherReminder.py", shell=True)
 
 ################### Launching programs (func) #####################
+def openSettings():
+    KOTIKOTsettings.show()
+
 def launchAutoShipper():
     autoShipperDir = offprojects + "/AutoShipper/"
     autoShipperUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoShipper/autoshipper.py"
@@ -137,6 +139,7 @@ def launchfileGenerator():
 
     os.system("python " + fileGenerator)
 
+
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
@@ -146,6 +149,7 @@ ui.pushButton_5.clicked.connect(launchFilesConnector)
 ui.pushButton_6.clicked.connect(launchMeowarch)
 ui.pushButton_7.clicked.connect(launchPyQtConverter)
 ui.pushButton_8.clicked.connect(launchfileGenerator)
+ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
