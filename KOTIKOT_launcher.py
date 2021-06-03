@@ -18,18 +18,25 @@ if not os.path.exists(launcherfiles):
     os.mkdir(launcherfiles)
 
 ################### Self-updataing launcher #####################
-urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
-urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
+#urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
+#urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+#urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
 
 ################### Launching GUI #####################
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
+import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherSettings as kkset
 
 app = kkui.QtWidgets.QApplication(sys.argv)
 KOTIKOTlauncher = kkui.QtWidgets.QMainWindow()
 ui = kkui.Ui_KOTIKOTlauncher()
 ui.setupUi(KOTIKOTlauncher)
 KOTIKOTlauncher.show()
+
+settings = kkset.QtWidgets.QApplication(sys.argv)
+KOTIKOTsettings = kkset.QtWidgets.QMainWindow()
+uiset = kkset.Ui_Form()
+uiset.setupUi(KOTIKOTsettings)
+# KOTIKOTsettings.show()
 
 Popen('python ' + launcherfiles + "KOTIKOTlauncherReminder.py", shell=True)
 

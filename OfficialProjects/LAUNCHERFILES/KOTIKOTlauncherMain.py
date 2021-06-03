@@ -77,11 +77,13 @@ class Ui_KOTIKOTlauncher(object):
         self.statusbar = QtWidgets.QStatusBar(KOTIKOTlauncher)
         self.statusbar.setObjectName("statusbar")
         KOTIKOTlauncher.setStatusBar(self.statusbar)
+
         self.menuSettings = QtWidgets.QMenu(self.menubar)
+        self.menubar.addAction(self.menuSettings.menuAction())
         self.actionOpen_settings = QtWidgets.QAction(KOTIKOTlauncher)
         self.actionOpen_settings.setObjectName("actionOpen_settings")
         self.menuSettings.addAction(self.actionOpen_settings)
-        self.menubar.addAction(self.menuSettings.menuAction())
+
 
         self.retranslateUi(KOTIKOTlauncher)
         QtCore.QMetaObject.connectSlotsByName(KOTIKOTlauncher)
