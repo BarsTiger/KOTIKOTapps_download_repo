@@ -8,7 +8,7 @@ launcherfiles = offprojects + "/LAUNCHERFILES/"
 launchergithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/KOTIKOT_launcher.py"
 launcherguigithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherMain.py"
 launcherremindergithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherReminder.py"
-
+launchersettingsgithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherSettings.py"
 
 ################### Checking folders #####################
 if not os.path.exists(offprojects):
@@ -21,6 +21,8 @@ if not os.path.exists(launcherfiles):
 urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
 urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
 urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
+urllib.request.urlretrieve(launchersettingsgithuburl, launcherfiles + "KOTIKOTlauncherSettings.py")
+
 
 ################### Launching GUI #####################
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
