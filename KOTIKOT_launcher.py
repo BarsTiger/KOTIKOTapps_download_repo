@@ -155,3 +155,4 @@ ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
 sys.exit(app.exec_())
+sys.exit(settings.exec_())
