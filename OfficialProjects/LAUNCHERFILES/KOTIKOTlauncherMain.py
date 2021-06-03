@@ -5,7 +5,7 @@ class Ui_KOTIKOTlauncher(object):
         # self.gridLayout.addWidget(self.pushButton, столбец, ряд, 1, 1)
 
         KOTIKOTlauncher.setObjectName("KOTIKOTlauncher")
-        KOTIKOTlauncher.resize(434, 434)
+        KOTIKOTlauncher.resize(434, 440)
         KOTIKOTlauncher.setMinimumSize(QtCore.QSize(50, 50))
         KOTIKOTlauncher.setMaximumSize(QtCore.QSize(16777215, 16777215))
 
@@ -77,6 +77,11 @@ class Ui_KOTIKOTlauncher(object):
         self.statusbar = QtWidgets.QStatusBar(KOTIKOTlauncher)
         self.statusbar.setObjectName("statusbar")
         KOTIKOTlauncher.setStatusBar(self.statusbar)
+        self.menuSettings = QtWidgets.QMenu(self.menubar)
+        self.actionOpen_settings = QtWidgets.QAction(KOTIKOTlauncher)
+        self.actionOpen_settings.setObjectName("actionOpen_settings")
+        self.menuSettings.addAction(self.actionOpen_settings)
+        self.menubar.addAction(self.menuSettings.menuAction())
 
         self.retranslateUi(KOTIKOTlauncher)
         QtCore.QMetaObject.connectSlotsByName(KOTIKOTlauncher)
@@ -84,6 +89,8 @@ class Ui_KOTIKOTlauncher(object):
     def retranslateUi(self, KOTIKOTlauncher):
         _translate = QtCore.QCoreApplication.translate
         KOTIKOTlauncher.setWindowTitle(_translate("KOTIKOTlauncher", "KOTIKOTlauncher"))
+        self.menuSettings.setTitle(_translate("KOTIKOTlauncher", "Settings"))
+        self.actionOpen_settings.setText(_translate("KOTIKOTlauncher", "Open settings"))
         self.pushButton_1.setText(_translate("KOTIKOTlauncher", "AutoShipper"))
         self.pushButton_2.setText(_translate("KOTIKOTlauncher", "Bars`s auto\nbridger"))
         self.pushButton_3.setText(_translate("KOTIKOTlauncher", "CatBench"))
@@ -92,6 +99,7 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_6.setText(_translate("KOTIKOTlauncher", "Meowarch"))
         self.pushButton_7.setText(_translate("KOTIKOTlauncher", "PyQt\nconverter"))
         self.pushButton_8.setText(_translate("KOTIKOTlauncher", "File\ngenerator"))
+
 
 
 if __name__ == "__main__":
