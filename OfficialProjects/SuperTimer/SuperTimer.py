@@ -13,7 +13,6 @@ except:
 if not os.path.isfile('alarm.mp3'):
     urllib.request.urlretrieve("https://github.com/BarsTiger/KOTIKOTapps_download_repo/blob/master/OfficialProjects/SuperTimer/alarm.mp3?raw=true", 'alarm.mp3')
 
-print("You can change alarm sound: just reneame your sound to alarm.mp3 and copy it to SuperTimer folder (to get original just delete your file)")
 superSecond = float(input("Print how many real seconds will be in superSecond: "))
 timeInSuperSeconds = int(input("Timer in superSeconds: "))
 
