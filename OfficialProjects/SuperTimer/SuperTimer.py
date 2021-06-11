@@ -10,6 +10,7 @@ except:
     subprocess.check_call([sys.executable, "-m", "pip", "install", 'playsound'])
     from playsound import playsound
 
+print("You can change alarm sound: just reneame your sound to alarm.mp3 and copy it to SuperTimer folder")
 superSecond = float(input("Print how many real seconds will be in superSecond: "))
 timeInSuperSeconds = int(input("Timer in superSeconds: "))
 
@@ -20,3 +21,5 @@ while timeInSuperSeconds > 0:
     print('Time remaining: {{:{:}}} seconds'.format(width).format(timeInSuperSeconds), end='\r')
     timeInSuperSeconds -= 1
     time.sleep(superSecond)
+
+playsound("alarm.mp3")
