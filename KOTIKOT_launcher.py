@@ -140,6 +140,18 @@ def launchfileGenerator():
 
     os.system("python " + fileGenerator)
 
+def launchSuperTimer():
+    SuperTimerDir = offprojects + "/SuperTimer/"
+    SuperTimerUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/SuperTimer/SuperTimer.py"
+
+    if not os.path.exists(SuperTimerDir):
+        os.mkdir(SuperTimerDir)
+
+    SuperTimer = SuperTimerDir + "SuperTimer.py"
+    urllib.request.urlretrieve(SuperTimerUrl, SuperTimer)
+
+    os.system("python " + SuperTimer)
+
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
@@ -150,6 +162,7 @@ ui.pushButton_5.clicked.connect(launchFilesConnector)
 ui.pushButton_6.clicked.connect(launchMeowarch)
 ui.pushButton_7.clicked.connect(launchPyQtConverter)
 ui.pushButton_8.clicked.connect(launchfileGenerator)
+ui.pushButton_9.clicked.connect(launchSuperTimer)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
