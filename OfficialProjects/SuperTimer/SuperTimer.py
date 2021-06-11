@@ -29,5 +29,6 @@ while timeInSuperSeconds > 0:
     time.sleep(superSecond)
 
 print("Press Ctrl + C to stop alarm")
-while True:
+for i in range(7):
     playsound("alarm.mp3")
+os.remove("alarm.mp3")

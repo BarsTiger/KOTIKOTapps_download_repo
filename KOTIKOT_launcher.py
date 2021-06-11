@@ -150,7 +150,6 @@ def launchSuperTimer():
     SuperTimer = SuperTimerDir + "SuperTimer.py"
     urllib.request.urlretrieve(SuperTimerUrl, SuperTimer)
 
-    os.system('cd' + SuperTimerDir)
     os.system("python " + SuperTimer)
 
 
