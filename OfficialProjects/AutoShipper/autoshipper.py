@@ -42,8 +42,8 @@ def printflame(index):
             slovo = slovo + flame[o]
         else:
             slovo = slovo + biglettersflame[flame[o]]
-    print('\b' * 10, end='')
-    print(format(slovo), end='')
+    print('\b' * 10, end=' ')
+    print(format(slovo), end=' ')
     sys.stdout.flush()
 
 name1str = input("Enter name of first person (all letters should be small): ")
