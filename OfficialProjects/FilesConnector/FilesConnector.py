@@ -7,7 +7,7 @@ except:
     subprocess.check_call([sys.executable, "-m", "pip", "install", 'easygui'])
     import easygui
 
-slash = '/'
+slash = '\\'
 
 start = easygui.buttonbox("Open file (image, text, sound, what you want) to push archive in", "FilesConnector", ("Browse file", "Cancel"))
 
