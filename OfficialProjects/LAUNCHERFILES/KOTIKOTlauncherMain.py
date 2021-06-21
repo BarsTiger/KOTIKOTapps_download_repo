@@ -75,6 +75,12 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_9.setObjectName("pushButton_9")
         self.gridLayout.addWidget(self.pushButton_9, 3, 2, 1, 1)
 
+        self.pushButton_10 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.pushButton_10.setMinimumSize(QtCore.QSize(100, 100))
+        self.pushButton_10.setMaximumSize(QtCore.QSize(100, 100))
+        self.pushButton_10.setObjectName("pushButton_100")
+        self.gridLayout.addWidget(self.pushButton_10, 0, 4, 1, 1)
+
         KOTIKOTlauncher.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(KOTIKOTlauncher)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 434, 21))
@@ -108,6 +114,7 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_7.setText(_translate("KOTIKOTlauncher", "PyQt\nconverter"))
         self.pushButton_8.setText(_translate("KOTIKOTlauncher", "File\ngenerator"))
         self.pushButton_9.setText(_translate("KOTIKOTlauncher", "SuperTimer"))
+        self.pushButton_10.setText(_translate("KOTIKOTlauncher", "Koto\nGame\nScam"))
 
 
 
