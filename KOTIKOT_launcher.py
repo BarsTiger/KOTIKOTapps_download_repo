@@ -152,6 +152,18 @@ def launchSuperTimer():
 
     os.system("python " + SuperTimer)
 
+def launchKotoGameScam():
+    KotoGameScamDir = offprojects + "/KotoGameScam/"
+    KotoGameScamUrl = "https://github.com/BarsTiger/KOTIKOTapps_download_repo/raw/master/OfficialProjects/KotoGameScam/KotoGameScam.py"
+
+    if not os.path.exists(KotoGameScamDir):
+        os.mkdir(KotoGameScamDir)
+
+    KotoGameScam = KotoGameScamDir + "KotoGameScam.py"
+    urllib.request.urlretrieve(KotoGameScamUrl, KotoGameScam)
+
+    os.system("python " + KotoGameScam)
+
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
@@ -163,6 +175,7 @@ ui.pushButton_6.clicked.connect(launchMeowarch)
 ui.pushButton_7.clicked.connect(launchPyQtConverter)
 ui.pushButton_8.clicked.connect(launchfileGenerator)
 ui.pushButton_9.clicked.connect(launchSuperTimer)
+ui.pushButton_10.clicked.connect(launchKotoGameScam)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
