@@ -164,6 +164,18 @@ def launchKotoGameScam():
 
     os.system("python " + KotoGameScam)
 
+def launchNoHiddenText():
+    noHiddenTextDir = offprojects + "/noHiddenText/"
+    noHiddenTextUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/noHiddenText/noHiddenText.py"
+
+    if not os.path.exists(noHiddenTextDir):
+        os.mkdir(noHiddenTextDir)
+
+    noHiddenText = noHiddenTextDir + "noHiddenText.py"
+    urllib.request.urlretrieve(noHiddenTextUrl, noHiddenText)
+
+    os.system("python " + noHiddenText)
+
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
@@ -176,6 +188,7 @@ ui.pushButton_7.clicked.connect(launchPyQtConverter)
 ui.pushButton_8.clicked.connect(launchfileGenerator)
 ui.pushButton_9.clicked.connect(launchSuperTimer)
 ui.pushButton_10.clicked.connect(launchKotoGameScam)
+ui.pushButton_11.clicked.connect(launchNoHiddenText)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
