@@ -101,6 +101,8 @@ if whattodo == 1:
     print("\nYou can use this noHiddenText certificate: " + create())
     print("Availible download noHiddenText stamp for your document: ")
     print("https://github.com/BarsTiger/KOTIKOTapps_download_repo/tree/master/FilesForDownloading/noHiddenTextStamps")
+    input("To exit, press Enter")
 
 elif whattodo == 2:
     read()
+    input("To exit, press Enter")
