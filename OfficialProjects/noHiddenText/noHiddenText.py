@@ -99,6 +99,8 @@ whattodo = int(input("1 - Create own noHiddenText certificate; 2 - Read someone'
 
 if whattodo == 1:
     print("\nYou can use this noHiddenText certificate: " + create())
+    print("Availible download noHiddenText stamp for your document: ")
+    print("https://github.com/BarsTiger/KOTIKOTapps_download_repo/tree/master/FilesForDownloading/noHiddenTextStamps")
 
 elif whattodo == 2:
     read()
