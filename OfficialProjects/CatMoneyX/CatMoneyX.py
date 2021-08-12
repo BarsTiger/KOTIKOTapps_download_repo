@@ -155,6 +155,7 @@ def firstcsan():
         print('Found', len(address), 'addresses')
     for i in address:
         straddress.append(str(i))
+    print(straddress)
 
 def secondscan():
     global address, straddress
@@ -172,15 +173,17 @@ def secondscan():
     straddress.clear()
     for i in address:
         straddress.append(str(i))
+    print(straddress)
 
 def scam():
+    global address, straddress, wantedValue
     wantedValue = getfromslider()
     print("Started scamming to " + str(wantedValue))
     proc = pymem.Pymem(procName)
-    for wantToChangeAddress in wantToChangeAddresses:
-        proc.write_int(wantToChangeAddress, int(wantedValue))
+    for wantToChangeAddress in straddress:
+        proc.write_int(int(wantToChangeAddress), int(wantedValue))
         print('Changed value in ' + str(wantToChangeAddress) + ' to ' + str(wantedValue))
-    print('Values of addresses ' + str(wantToChangeAddresses) + ' now are ' + str(wantedValue))
+    print('Values of addresses ' + str(straddress) + ' now are ' + str(wantedValue))
 
 def getfromslider():
     global wantedValue
