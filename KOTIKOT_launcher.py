@@ -176,6 +176,17 @@ def launchNoHiddenText():
 
     os.system("python " + noHiddenText)
 
+def launchAutoBridger2():
+    autoBridger2Dir = offprojects + "/AutoBridger2/"
+    autoBridger2Url = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoBridger2/AutoBridger2.py"
+
+    if not os.path.exists(autoBridger2Dir):
+        os.mkdir(autoBridger2Dir)
+
+    autoBridger2 = autoBridger2Dir + "AutoBridger2.py"
+    urllib.request.urlretrieve(autoBridger2Url, autoBridger2)
+
+    os.system("python " + autoBridger2)
 
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
@@ -189,6 +200,7 @@ ui.pushButton_8.clicked.connect(launchfileGenerator)
 ui.pushButton_9.clicked.connect(launchSuperTimer)
 ui.pushButton_10.clicked.connect(launchKotoGameScam)
 ui.pushButton_11.clicked.connect(launchNoHiddenText)
+ui.pushButton_12.clicked.connect(launchAutoBridger2)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
