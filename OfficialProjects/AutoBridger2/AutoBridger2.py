@@ -1,5 +1,4 @@
-# hotkeyToBridge = input("Which hotkey will be used for bridging: ")
-hotkeyToBridge = "="
+hotkeyToBridge = input("Which hotkey will be used for bridging: ")
 import subprocess, sys
 import time
 danger = False
