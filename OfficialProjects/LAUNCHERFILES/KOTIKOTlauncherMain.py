@@ -105,6 +105,12 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_14.setObjectName("pushButton_14")
         self.gridLayout.addWidget(self.pushButton_14, 4, 1, 1, 1)
 
+        self.pushButton_15 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.pushButton_15.setMinimumSize(QtCore.QSize(100, 100))
+        self.pushButton_15.setMaximumSize(QtCore.QSize(100, 100))
+        self.pushButton_15.setObjectName("pushButton_15")
+        self.gridLayout.addWidget(self.pushButton_15, 4, 2, 1, 1)
+
         KOTIKOTlauncher.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(KOTIKOTlauncher)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 434, 21))
@@ -143,7 +149,7 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_12.setText(_translate("KOTIKOTlauncher", "Bars`s auto\nbridger 2"))
         self.pushButton_13.setText(_translate("KOTIKOTlauncher", "KotoGTA\nSingler"))
         self.pushButton_14.setText(_translate("KOTIKOTlauncher", "KOTO_LAN\nControl"))
-
+        self.pushButton_15.setText(_translate("KOTIKOTlauncher", "Koto\nPython\nCompiler"))
 
 
 if __name__ == "__main__":
