@@ -2,10 +2,10 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_KOTIKOTlauncher(object):
     def setupUi(self, KOTIKOTlauncher):
-        # self.gridLayout.addWidget(self.pushButton, столбец, ряд, 1, 1)
+        # self.gridLayout.addWidget(self.pushButton, ряд, столбец,  1, 1)
 
         KOTIKOTlauncher.setObjectName("KOTIKOTlauncher")
-        KOTIKOTlauncher.resize(434, 440)
+        KOTIKOTlauncher.resize(434, 470)
         KOTIKOTlauncher.setMinimumSize(QtCore.QSize(50, 50))
         KOTIKOTlauncher.setMaximumSize(QtCore.QSize(16777215, 16777215))
 
@@ -93,6 +93,18 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_12.setObjectName("pushButton_12")
         self.gridLayout.addWidget(self.pushButton_12, 3, 4, 1, 1)
 
+        self.pushButton_13 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.pushButton_13.setMinimumSize(QtCore.QSize(100, 100))
+        self.pushButton_13.setMaximumSize(QtCore.QSize(100, 100))
+        self.pushButton_13.setObjectName("pushButton_13")
+        self.gridLayout.addWidget(self.pushButton_13, 4, 0, 1, 1)
+
+        self.pushButton_14 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.pushButton_14.setMinimumSize(QtCore.QSize(100, 100))
+        self.pushButton_14.setMaximumSize(QtCore.QSize(100, 100))
+        self.pushButton_14.setObjectName("pushButton_14")
+        self.gridLayout.addWidget(self.pushButton_14, 4, 1, 1, 1)
+
         KOTIKOTlauncher.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(KOTIKOTlauncher)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 434, 21))
@@ -129,6 +141,8 @@ class Ui_KOTIKOTlauncher(object):
         self.pushButton_10.setText(_translate("KOTIKOTlauncher", "Koto\nGame\nScam"))
         self.pushButton_11.setText(_translate("KOTIKOTlauncher", "noHidden\nText"))
         self.pushButton_12.setText(_translate("KOTIKOTlauncher", "Bars`s auto\nbridger 2"))
+        self.pushButton_13.setText(_translate("KOTIKOTlauncher", "KotoGTA\nSingler"))
+        self.pushButton_14.setText(_translate("KOTIKOTlauncher", "KOTO_LAN\nControl"))
 
 
 
