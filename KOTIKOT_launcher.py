@@ -212,6 +212,18 @@ def launchKOTO_LAN_Control():
 
     os.system("python " + KOTO_LAN_Control)
 
+def launchKotoPythonCompiler():
+    KotoPythonCompilerDir = offprojects + "/KotoPythonCompiler/"
+    KotoPythonCompilerUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KotoPythonCompiler/KotoPythonCompiler.py"
+
+    if not os.path.exists(KotoPythonCompilerDir):
+        os.mkdir(KotoPythonCompilerDir)
+
+    KotoPythonCompiler = KotoPythonCompilerDir + "KotoPythonCompiler.py"
+    urllib.request.urlretrieve(KotoPythonCompilerUrl, KotoPythonCompiler)
+
+    os.system("python " + KotoPythonCompiler)
+
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
