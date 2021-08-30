@@ -98,6 +98,7 @@ ui.setupUi(MainWindow)
 MainWindow.show()
 
 os.system('cls' if os.name == 'nt' else 'clear')
+os.system('title KOTO_LAN_Control')
 
 ui.ON.clicked.connect(on)
 ui.OFF.clicked.connect(off)
