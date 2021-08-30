@@ -188,6 +188,30 @@ def launchAutoBridger2():
 
     os.system("python " + autoBridger2)
 
+def launchKotoGTAsingler():
+    KotoGTAsinglerDir = offprojects + "/KotoGTAsingler/"
+    KotoGTAsinglerUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KotoGTAsingler/KotoGTAsingler.py"
+
+    if not os.path.exists(KotoGTAsinglerDir):
+        os.mkdir(KotoGTAsinglerDir)
+
+    KotoGTAsingler = KotoGTAsinglerDir + "KotoGTAsingler.py"
+    urllib.request.urlretrieve(KotoGTAsinglerUrl, KotoGTAsingler)
+
+    os.system("python " + KotoGTAsingler)
+
+def launchKOTO_LAN_Control():
+    KOTO_LAN_ControlDir = offprojects + "/KOTO_LAN_Control/"
+    KOTO_LAN_ControlUrl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KOTO_LAN_Control/KOTO_LAN_Control.py"
+
+    if not os.path.exists(KOTO_LAN_ControlDir):
+        os.mkdir(KOTO_LAN_ControlDir)
+
+    KOTO_LAN_Control = KOTO_LAN_ControlDir + "KOTO_LAN_Control.py"
+    urllib.request.urlretrieve(KOTO_LAN_ControlUrl, KOTO_LAN_Control)
+
+    os.system("python " + KOTO_LAN_Control)
+
 ################### Checking buttons #####################
 ui.pushButton_1.clicked.connect(launchAutoShipper)
 ui.pushButton_2.clicked.connect(launchAutoBridger)
@@ -201,6 +225,8 @@ ui.pushButton_9.clicked.connect(launchSuperTimer)
 ui.pushButton_10.clicked.connect(launchKotoGameScam)
 ui.pushButton_11.clicked.connect(launchNoHiddenText)
 ui.pushButton_12.clicked.connect(launchAutoBridger2)
+ui.pushButton_13.clicked.connect(launchKotoGTAsingler)
+ui.pushButton_14.clicked.connect(launchKOTO_LAN_Control)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
