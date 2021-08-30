@@ -239,6 +239,7 @@ ui.pushButton_11.clicked.connect(launchNoHiddenText)
 ui.pushButton_12.clicked.connect(launchAutoBridger2)
 ui.pushButton_13.clicked.connect(launchKotoGTAsingler)
 ui.pushButton_14.clicked.connect(launchKOTO_LAN_Control)
+ui.pushButton_15.clicked.connect(launchKotoPythonCompiler)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
 ################### Exiting #####################
