@@ -66,7 +66,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "KOTO_LAN_Control"))
         self.ON.setWhatsThis(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt;\">ON</span></p></body></html>"))
         self.OFF.setText(_translate("MainWindow", "OFF"))
 
