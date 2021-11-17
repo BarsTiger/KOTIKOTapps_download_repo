@@ -10,9 +10,6 @@ except:
     subprocess.check_call([sys.executable, "-m", "pip", "install", 'playsound'])
     from playsound import playsound
 
-if not os.path.isfile('alarm.mp3'):
-    urllib.request.urlretrieve("https://github.com/BarsTiger/KOTIKOTapps_download_repo/blob/master/FilesForDownloading/alarm.mp3?raw=true", 'alarm.mp3')
-
 superSecond = float(input("Print how many real seconds will be in superSecond: "))
 timeInSuperSeconds = int(input("Timer in superSeconds: "))
 
@@ -25,6 +22,11 @@ while timeInSuperSeconds > 0:
     formattedTimeInSuperSeconds = str(datetime.timedelta(seconds=timeInSuperSeconds))
     print('Time remaining: {{:{:}}}'.format(width).format(formattedTimeInSuperSeconds), end='\r')
     timeInSuperSeconds -= 1
+    if timeInSuperSeconds <= 1:
+        if not os.path.isfile('alarm.mp3'):
+            urllib.request.urlretrieve(
+                "https://github.com/BarsTiger/KOTIKOTapps_download_repo/blob/master/FilesForDownloading/alarm.mp3?raw=true",
+                'alarm.mp3')
     time.sleep(superSecond)
 
 print("Press Ctrl + C to stop alarm")
