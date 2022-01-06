@@ -249,8 +249,11 @@ def sort():
     valueAfterChange = int(ui.ScannedValue.text())
     print("I will leave only " + str(valueAfterChange))
     for addressFromAll in address:
-        if proc.read_int(addressFromAll) == int(valueAfterChange):
-            sortedAddresses.append(addressFromAll)
+        try:
+            if proc.read_int(addressFromAll) == int(valueAfterChange):
+                sortedAddresses.append(addressFromAll)
+        except:
+            pass
     print('Found after ThrowAwaySort:', len(sortedAddresses))
     address.clear()
     for i in sortedAddresses:
