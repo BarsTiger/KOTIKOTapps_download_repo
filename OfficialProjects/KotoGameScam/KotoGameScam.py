@@ -225,11 +225,17 @@ def getProcFromText():
     procName = str(ui.processName.toPlainText())
     print("Ok, I will search in " + procName)
 
+def get_pid(process_name):
+    for proc in psutil.process_iter():
+        if process_name in proc.name():
+            pid = proc.pid
+    return pid
+
 def firstcsan():
     global address
     value = int(ui.ScannedValue.text())
     print("I will check for " + str(value))
-    pid = mem_edit.Process.get_pid_by_name(procName)
+    pid = get_pid(procName)
     with mem_edit.Process.open_process(pid) as p:
         address = p.search_all_memory(ctypes.c_int(int(value)))
         print('Found', len(address), 'addresses')
