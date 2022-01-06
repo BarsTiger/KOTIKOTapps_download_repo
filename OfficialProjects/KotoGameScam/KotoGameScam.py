@@ -232,45 +232,54 @@ def get_pid(process_name):
     return pid
 
 def firstcsan():
-    global address
-    value = int(ui.ScannedValue.text())
-    print("I will check for " + str(value))
-    pid = get_pid(procName)
-    with mem_edit.Process.open_process(pid) as p:
-        address = p.search_all_memory(ctypes.c_int(int(value)))
-        print('Found', len(address), 'addresses')
-    for i in address:
-        straddress.append(str(i))
-    ui.generateListOfAddresses()
+    try:
+        global address
+        value = int(ui.ScannedValue.text())
+        print("I will check for " + str(value))
+        pid = get_pid(procName)
+        with mem_edit.Process.open_process(pid) as p:
+            address = p.search_all_memory(ctypes.c_int(int(value)))
+            print('Found', len(address), 'addresses')
+        for i in address:
+            straddress.append(str(i))
+        ui.generateListOfAddresses()
+    except:
+        pass
 
 def sort():
-    sortedAddresses.clear()
-    proc = pymem.Pymem(procName)
-    valueAfterChange = int(ui.ScannedValue.text())
-    print("I will leave only " + str(valueAfterChange))
-    for addressFromAll in address:
-        try:
-            if proc.read_int(addressFromAll) == int(valueAfterChange):
-                sortedAddresses.append(addressFromAll)
-        except:
-            pass
-    print('Found after ThrowAwaySort:', len(sortedAddresses))
-    address.clear()
-    for i in sortedAddresses:
-        address.append(i)
-    straddress.clear()
-    for i in address:
-        straddress.append(str(i))
-    ui.generateListOfAddresses()
+    try:
+        sortedAddresses.clear()
+        proc = pymem.Pymem(procName)
+        valueAfterChange = int(ui.ScannedValue.text())
+        print("I will leave only " + str(valueAfterChange))
+        for addressFromAll in address:
+            try:
+                if proc.read_int(addressFromAll) == int(valueAfterChange):
+                    sortedAddresses.append(addressFromAll)
+            except:
+                pass
+        print('Found after ThrowAwaySort:', len(sortedAddresses))
+        address.clear()
+        for i in sortedAddresses:
+            address.append(i)
+        straddress.clear()
+        for i in address:
+            straddress.append(str(i))
+        ui.generateListOfAddresses()
+    except:
+        pass
 
 def scam():
-    wantedValue = int(ui.ScannedValue_2.text())
-    print("Started scamming to " + str(wantedValue))
-    proc = pymem.Pymem(procName)
-    for wantToChangeAddress in wantToChangeAddresses:
-        proc.write_int(wantToChangeAddress, int(wantedValue))
-        print('Changed value in ' + str(wantToChangeAddress) + ' to ' + str(wantedValue))
-    print('Values of addresses ' + str(wantToChangeAddresses) + ' now are ' + str(wantedValue))
+    try:
+        wantedValue = int(ui.ScannedValue_2.text())
+        print("Started scamming to " + str(wantedValue))
+        proc = pymem.Pymem(procName)
+        for wantToChangeAddress in wantToChangeAddresses:
+            proc.write_int(wantToChangeAddress, int(wantedValue))
+            print('Changed value in ' + str(wantToChangeAddress) + ' to ' + str(wantedValue))
+        print('Values of addresses ' + str(wantToChangeAddresses) + ' now are ' + str(wantedValue))
+    except:
+        pass
 
 getalproc()
 
