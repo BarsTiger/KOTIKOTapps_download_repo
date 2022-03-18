@@ -22,11 +22,11 @@ if not os.path.exists(launcherfiles):
     os.mkdir(launcherfiles)
 
 # ---------------- Self-updataing launcher ----------------
-# if __name__ == "__main__":
-    # urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-    # urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
-    # urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
-    # urllib.request.urlretrieve(launchersettingsgithuburl, launcherfiles + "KOTIKOTlauncherSettings.py")
+if __name__ == "__main__":
+    urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
+    urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+    urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
+    urllib.request.urlretrieve(launchersettingsgithuburl, launcherfiles + "KOTIKOTlauncherSettings.py")
 
 
 # ---------------- Launching GUI ----------------
