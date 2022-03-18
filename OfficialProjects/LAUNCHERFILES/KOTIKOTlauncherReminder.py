@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
@@ -17,7 +18,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "ALWAYS CHECK TERMINAL"))
-        self.label.setText(_translate("Form", "<html><head/><body><p>Some apps will open in terminal.</p><p>You should check it!</p></body></html>"))
+        self.label.setText(_translate("Form", "This app opened in terminal"))
 
 
 if __name__ == "__main__":

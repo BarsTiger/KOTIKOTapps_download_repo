@@ -1,0 +1,122 @@
+{
+    "AutoShipper":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoShipper/autoshipper.py"],
+            "dir": "AutoShipper",
+            "runtime": "python",
+            "run": "autoshipper.py",
+            "window": false
+        },
+    "Bars`s \nauto \nbridger":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoBridger/AutoBridge.py"],
+            "dir": "AutoBridger",
+            "runtime": "python",
+            "run": "AutoBridge.py",
+            "window": false
+        },
+    "CatBench":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/CatBench/CatBench.py"],
+            "dir": "CatBench",
+            "runtime": "python",
+            "run": "CatBench.py",
+            "window": false
+        },
+    "autoPage\nRestarter":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/CoolAutoPressers/autoPageRestarter.py"],
+            "dir": "autoPageRestarter",
+            "runtime": "python",
+            "run": "autoPageRestarter.py",
+            "window": false
+        },
+    "Files connector":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/FilesConnector/FilesConnector.py"],
+            "dir": "FilesConnector",
+            "runtime": "python",
+            "run": "FilesConnector.py",
+            "window": true
+        },
+    "Meowarch":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/meowarch/meowarch.py"],
+            "dir": "meowarch",
+            "runtime": "python",
+            "run": "meowarch.py",
+            "window": true
+        },
+    "PyQtConverter":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/PyQtConverter/PyQtConverter.py"],
+            "dir": "PyQtConverter",
+            "runtime": "python",
+            "run": "PyQtConverter.py",
+            "window": true
+        },
+    "File generator":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/RandomBigOrSmallFileCreator/fileGenerator.py"],
+            "dir": "fileGenerator",
+            "runtime": "python",
+            "run": "fileGenerator.py",
+            "window": false
+        },
+    "SuperTimer":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/SuperTimer/SuperTimer.py"],
+            "dir": "SuperTimer",
+            "runtime": "python",
+            "run": "SuperTimer.py",
+            "window": false
+        },
+    "KotoGameScam":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KotoGameScam/KotoGameScam.py"],
+            "dir": "KotoGameScam",
+            "runtime": "python",
+            "run": "KotoGameScam.py",
+            "window": true
+        },
+    "noHiddenText":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/noHiddenText/noHiddenText.py"],
+            "dir": "noHiddenText",
+            "runtime": "python",
+            "run": "noHiddenText.py",
+            "window": false
+        },
+    "Bars`s \nauto \nbridger 2":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/AutoBridger2/AutoBridger2.py"],
+            "dir": "AutoBridger2",
+            "runtime": "python",
+            "run": "AutoBridger2.py",
+            "window": false
+        },
+    "KOTO_LAN\nControl":
+         {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KOTO_LAN_Control/KOTO_LAN_Control.py"],
+            "dir": "KOTO_LAN_Control",
+            "runtime": "python",
+            "run": "KOTO_LAN_Control.py",
+             "window": true
+        },
+    "KotoGTAsingler":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KotoGTAsingler/KotoGTAsingler.py"],
+            "dir": "KotoGTAsingler",
+            "runtime": "python",
+            "run": "KotoGTAsingler.py",
+            "window": true
+        },
+    "KotoPython\nCompiler":
+         {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/KotoPythonCompiler/KotoPythonCompiler.py"],
+            "dir": "KotoPythonCompiler",
+            "runtime": "python",
+            "run": "KotoPythonCompiler.py",
+             "window": true
+        }
+}

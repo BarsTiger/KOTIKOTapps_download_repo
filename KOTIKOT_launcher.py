@@ -1,6 +1,9 @@
-import urllib.request, os, time, sys, subprocess
-from subprocess import *
-from PyQt5 import *
+import urllib.request
+import os
+import sys
+import subprocess
+import requests
+import json
 
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
@@ -10,39 +13,73 @@ launcherguigithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_
 launcherremindergithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherReminder.py"
 launchersettingsgithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherSettings.py"
 
-################### Checking folders #####################
+
+# ---------------- Checking folders ----------------
 if not os.path.exists(offprojects):
     os.mkdir(offprojects)
 
 if not os.path.exists(launcherfiles):
     os.mkdir(launcherfiles)
 
-################### Self-updataing launcher #####################
-urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
-urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
-urllib.request.urlretrieve(launchersettingsgithuburl, launcherfiles + "KOTIKOTlauncherSettings.py")
+# ---------------- Self-updataing launcher ----------------
+# if __name__ == "__main__":
+    # urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
+    # urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
+    # urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
+    # urllib.request.urlretrieve(launchersettingsgithuburl, launcherfiles + "KOTIKOTlauncherSettings.py")
 
 
-################### Launching GUI #####################
+# ---------------- Launching GUI ----------------
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherSettings as kkset
+import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder as kkrem
 
 app = kkui.QtWidgets.QApplication(sys.argv)
 KOTIKOTlauncher = kkui.QtWidgets.QMainWindow()
 ui = kkui.Ui_KOTIKOTlauncher()
 ui.setupUi(KOTIKOTlauncher)
-KOTIKOTlauncher.show()
+if __name__ == "__main__":
+    KOTIKOTlauncher.show()
 
 KOTIKOTsettings = kkset.QtWidgets.QMainWindow()
 uiset = kkset.Ui_Form()
 uiset.setupUi(KOTIKOTsettings)
 
-Popen('python ' + launcherfiles + "KOTIKOTlauncherReminder.py", shell=True)
+KOTIKOTreminder = kkrem.QtWidgets.QMainWindow()
+uirem = kkrem.Ui_Form()
+uirem.setupUi(KOTIKOTreminder)
 
-################### Launching programs (func) #####################
+
+# ---------------- Launching programs ----------------
 def openSettings():
     KOTIKOTsettings.show()
+
+
+def download_app(app):
+    for url in app['urls']:
+        print('Downloading ' + url)
+        urllib.request.urlretrieve(url, offprojects + app['dir'] + "/" + url.split("/")[-1])
+    print('Finished')
+
+
+def launchApp():
+    with open("OfficialProjects/LAUNCHERFILES/apps.json") as appsfile:
+        apps = json.load(appsfile)
+    name = KOTIKOTlauncher.sender().text()
+    app = apps[name]
+    directory = offprojects + app['dir']
+
+    if not os.path.exists(directory):
+        os.mkdir(directory)
+        download_app(app)
+
+    else:
+        with open(directory + "/v") as v_file:
+            v = int(v_file.read())
+        if v < int(requests.get('/'.join(app['urls'][0][:-1])).text):
+            print('bebras')
+            download_app(app)
+
 
 def launchAutoShipper():
     autoShipperDir = offprojects + "/AutoShipper/"
@@ -224,23 +261,12 @@ def launchKotoPythonCompiler():
 
     os.system("python " + KotoPythonCompiler)
 
-################### Checking buttons #####################
-ui.pushButton_1.clicked.connect(launchAutoShipper)
-ui.pushButton_2.clicked.connect(launchAutoBridger)
-ui.pushButton_3.clicked.connect(launchCatBench)
-ui.pushButton_4.clicked.connect(launchautoPageRestarter)
-ui.pushButton_5.clicked.connect(launchFilesConnector)
-ui.pushButton_6.clicked.connect(launchMeowarch)
-ui.pushButton_7.clicked.connect(launchPyQtConverter)
-ui.pushButton_8.clicked.connect(launchfileGenerator)
-ui.pushButton_9.clicked.connect(launchSuperTimer)
-ui.pushButton_10.clicked.connect(launchKotoGameScam)
-ui.pushButton_11.clicked.connect(launchNoHiddenText)
-ui.pushButton_12.clicked.connect(launchAutoBridger2)
-ui.pushButton_13.clicked.connect(launchKotoGTAsingler)
-ui.pushButton_14.clicked.connect(launchKOTO_LAN_Control)
-ui.pushButton_15.clicked.connect(launchKotoPythonCompiler)
+
+# ---------------- Checking buttons ----------------
+for button in ui.buttons:
+    button.clicked.connect(launchApp)
 ui.actionOpen_settings.triggered.connect(openSettings)
 
-################### Exiting #####################
-sys.exit(app.exec_())
+# ---------------- Executing and exiting ----------------
+if __name__ == "__main__":
+    sys.exit(app.exec_())
