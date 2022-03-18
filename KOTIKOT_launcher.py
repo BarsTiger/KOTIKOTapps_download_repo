@@ -63,33 +63,34 @@ def download_app(app):
 
 
 def launchApp():
-    with open("OfficialProjects/LAUNCHERFILES/apps.json") as appsfile:
-        apps = json.load(appsfile)
-    name = KOTIKOTlauncher.sender().text()
-    app = apps[name]
-    directory = offprojects + app['dir']
+    try:
+        with open("OfficialProjects/LAUNCHERFILES/apps.json") as appsfile:
+            apps = json.load(appsfile)
+        name = KOTIKOTlauncher.sender().text()
+        app = apps[name]
+        directory = offprojects + app['dir']
 
-    if not os.path.exists(directory):
-        os.mkdir(directory)
-        download_app(app)
-
-    else:
-        with open(directory + "/v") as v_file:
-            v = int(v_file.read())
-        if v < int(requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text):
-            print('Current app version is ' + str(v) + ' and new version is '
-                  + requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text)
-            print('Updating...')
+        if not os.path.exists(directory):
+            os.mkdir(directory)
             download_app(app)
-            urllib.request.urlretrieve('/'.join(app['urls'][0].split('/')[:-1]) + '/v',
-                                       offprojects + app['dir'] + "/v")
 
-    displayName = name.replace('\n', '')
-    print(f"---------------- {displayName} ----------------")
-    subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
-                     shell=True, close_fds=True)
-    if not app['window']:
-        KOTIKOTreminder.show()
+        else:
+            with open(directory + "/v") as v_file:
+                v = int(v_file.read())
+            if v < int(requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text):
+                print('Current app version is ' + str(v) + ' and new version is '
+                      + requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text)
+                print('Updating...')
+                download_app(app)
+                urllib.request.urlretrieve('/'.join(app['urls'][0].split('/')[:-1]) + '/v',
+                                           offprojects + app['dir'] + "/v")
+
+        displayName = name.replace('\n', '')
+        print(f"---------------- {displayName} ----------------")
+        subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
+                         shell=True, close_fds=True)
+    except:
+        pass
 
 
 # ---------------- Checking buttons ----------------
