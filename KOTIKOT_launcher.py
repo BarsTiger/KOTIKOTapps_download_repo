@@ -88,6 +88,8 @@ def launchApp():
     print(f"---------------- {displayName} ----------------")
     subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
                      shell=True, close_fds=True)
+    if not app['window']:
+        KOTIKOTreminder.show()
 
 
 # ---------------- Checking buttons ----------------
