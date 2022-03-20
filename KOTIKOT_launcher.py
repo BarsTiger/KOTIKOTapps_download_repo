@@ -27,8 +27,12 @@ if not os.path.exists(launcherfiles):
 if __name__ == "__main__":
     urllib.request.urlretrieve(appslisturl, launcherfiles + "apps.json")
 
-    with open(launcherfiles + "/v") as v_file:
-        v = int(v_file.read())
+    try:
+        with open(launcherfiles + "/v") as v_file:
+            v = int(v_file.read())
+    except:
+        v = -1
+
     if v < int(requests.get(launcherversionurl).text):
         urllib.request.urlretrieve(launcherurl, "KOTIKOT_launcher.py")
         urllib.request.urlretrieve(guiurl, launcherfiles + "KOTIKOTlauncherMain.py")
@@ -82,8 +86,11 @@ def launchApp():
         download_app(app)
 
     else:
-        with open(directory + "/v") as v_file:
-            v = int(v_file.read())
+        try:
+            with open(directory + "/v") as v_file:
+                v = int(v_file.read())
+        except:
+            v = -1
         if v < int(requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text):
             print('Current app version is ' + str(v) + ' and new version is '
                   + requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text)
