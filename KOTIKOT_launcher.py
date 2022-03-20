@@ -8,10 +8,12 @@ import json
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
 launcherfiles = offprojects + "/LAUNCHERFILES/"
-launchergithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/KOTIKOT_launcher.py"
-launcherguigithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherMain.py"
-launcherremindergithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherReminder.py"
-launchersettingsgithuburl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherSettings.py"
+launcherurl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/KOTIKOT_launcher.py"
+guiurl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherMain.py"
+reminderurl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherReminder.py"
+settingsurl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/KOTIKOTlauncherSettings.py"
+launcherversionurl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/v"
+appslisturl = "https://raw.githubusercontent.com/BarsTiger/KOTIKOTapps_download_repo/master/OfficialProjects/LAUNCHERFILES/apps.json"
 
 
 # ---------------- Checking folders ----------------
@@ -23,10 +25,16 @@ if not os.path.exists(launcherfiles):
 
 # ---------------- Self-updataing launcher ----------------
 if __name__ == "__main__":
-    urllib.request.urlretrieve(launchergithuburl, "KOTIKOT_launcher.py")
-    urllib.request.urlretrieve(launcherguigithuburl, launcherfiles + "KOTIKOTlauncherMain.py")
-    urllib.request.urlretrieve(launcherremindergithuburl, launcherfiles + "KOTIKOTlauncherReminder.py")
-    urllib.request.urlretrieve(launchersettingsgithuburl, launcherfiles + "KOTIKOTlauncherSettings.py")
+    urllib.request.urlretrieve(appslisturl, launcherfiles + "apps.json")
+
+    with open(launcherfiles + "/v") as v_file:
+        v = int(v_file.read())
+    if v < int(requests.get(launcherversionurl).text):
+        urllib.request.urlretrieve(launcherurl, "KOTIKOT_launcher.py")
+        urllib.request.urlretrieve(guiurl, launcherfiles + "KOTIKOTlauncherMain.py")
+        urllib.request.urlretrieve(reminderurl, launcherfiles + "KOTIKOTlauncherReminder.py")
+        urllib.request.urlretrieve(settingsurl, launcherfiles + "KOTIKOTlauncherSettings.py")
+        urllib.request.urlretrieve(launcherversionurl, launcherfiles + "v")
 
 
 # ---------------- Launching GUI ----------------
@@ -63,34 +71,31 @@ def download_app(app):
 
 
 def launchApp():
-    try:
-        with open("OfficialProjects/LAUNCHERFILES/apps.json") as appsfile:
-            apps = json.load(appsfile)
-        name = KOTIKOTlauncher.sender().text()
-        app = apps[name]
-        directory = offprojects + app['dir']
+    with open("OfficialProjects/LAUNCHERFILES/apps.json") as appsfile:
+        apps = json.load(appsfile)
+    name = KOTIKOTlauncher.sender().text()
+    app = apps[name]
+    directory = offprojects + app['dir']
 
-        if not os.path.exists(directory):
-            os.mkdir(directory)
+    if not os.path.exists(directory):
+        os.mkdir(directory)
+        download_app(app)
+
+    else:
+        with open(directory + "/v") as v_file:
+            v = int(v_file.read())
+        if v < int(requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text):
+            print('Current app version is ' + str(v) + ' and new version is '
+                  + requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text)
+            print('Updating...')
             download_app(app)
+            urllib.request.urlretrieve('/'.join(app['urls'][0].split('/')[:-1]) + '/v',
+                                       offprojects + app['dir'] + "/v")
 
-        else:
-            with open(directory + "/v") as v_file:
-                v = int(v_file.read())
-            if v < int(requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text):
-                print('Current app version is ' + str(v) + ' and new version is '
-                      + requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text)
-                print('Updating...')
-                download_app(app)
-                urllib.request.urlretrieve('/'.join(app['urls'][0].split('/')[:-1]) + '/v',
-                                           offprojects + app['dir'] + "/v")
-
-        displayName = name.replace('\n', '')
-        print(f"---------------- {displayName} ----------------")
-        subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
-                         shell=True, close_fds=True)
-    except:
-        pass
+    displayName = name.replace('\n', '')
+    print(f"---------------- {displayName} ----------------")
+    subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
+                     shell=True, close_fds=True)
 
 
 # ---------------- Checking buttons ----------------
