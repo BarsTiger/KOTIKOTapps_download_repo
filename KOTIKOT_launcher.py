@@ -40,6 +40,9 @@ if __name__ == "__main__":
         urllib.request.urlretrieve(settingsurl, launcherfiles + "KOTIKOTlauncherSettings.py")
         urllib.request.urlretrieve(launcherversionurl, launcherfiles + "v")
 
+        subprocess.Popen(sys.executable + " KOTIKOT_launcher.py", shell=True)
+        sys.exit(0)
+
 
 # ---------------- Launching GUI ----------------
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
