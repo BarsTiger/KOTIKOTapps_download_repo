@@ -99,8 +99,8 @@ def launchApp():
             urllib.request.urlretrieve('/'.join(app['urls'][0].split('/')[:-1]) + '/v',
                                        offprojects + app['dir'] + "/v")
 
-    displayName = name.replace('\n', '')
-    print(f"---------------- {displayName} ----------------")
+    display_name = name.replace('\n', '')
+    print(f"---------------- {display_name} ----------------")
     subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
                      shell=True, close_fds=True)
 
