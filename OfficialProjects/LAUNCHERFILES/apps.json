@@ -117,6 +117,14 @@
             "dir": "KotoPythonCompiler",
             "runtime": "python",
             "run": "KotoPythonCompiler.py",
-             "window": true
+            "window": true
+        },
+    "GTABuyBase":
+        {
+            "urls": ["https://raw.githubusercontent.com/BarsTiger/KOTIKOTstandalone/master/GTAwhatToBuy/GTAwhatToBuy.py"],
+            "dir": "GTAwhatToBuy",
+            "runtime": "python",
+            "run": "GTAwhatToBuy.py",
+            "window": false
         }
 }
