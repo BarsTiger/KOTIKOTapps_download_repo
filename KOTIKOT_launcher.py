@@ -44,7 +44,7 @@ if __name__ == "__main__":
 # ---------------- Launching GUI ----------------
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherSettings as kkset
-import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder as kkrem
+from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder import popup
 
 app = kkui.QtWidgets.QApplication(sys.argv)
 KOTIKOTlauncher = kkui.QtWidgets.QMainWindow()
@@ -57,17 +57,13 @@ KOTIKOTsettings = kkset.QtWidgets.QMainWindow()
 uiset = kkset.Ui_Form()
 uiset.setupUi(KOTIKOTsettings)
 
-KOTIKOTreminder = kkrem.QtWidgets.QMainWindow()
-uirem = kkrem.Ui_Form()
-uirem.setupUi(KOTIKOTreminder)
-
 
 # ---------------- Launching programs ----------------
 def openSettings():
     KOTIKOTsettings.show()
 
 
-def download_app(app):
+def downloadApp(app):
     for url in app['urls']:
         print('Downloading ' + url)
         urllib.request.urlretrieve(url, offprojects + app['dir'] + "/" + url.split("/")[-1])
@@ -83,7 +79,7 @@ def launchApp():
 
     if not os.path.exists(directory):
         os.mkdir(directory)
-        download_app(app)
+        downloadApp(app)
 
     else:
         try:
@@ -95,14 +91,19 @@ def launchApp():
             print('Current app version is ' + str(v) + ' and new version is '
                   + requests.get('/'.join(app['urls'][0].split('/')[:-1]) + '/v').text)
             print('Updating...')
-            download_app(app)
+            downloadApp(app)
             urllib.request.urlretrieve('/'.join(app['urls'][0].split('/')[:-1]) + '/v',
                                        offprojects + app['dir'] + "/v")
 
     display_name = name.replace('\n', '')
     print(f"---------------- {display_name} ----------------")
-    subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
-                     shell=True, close_fds=True)
+    try:
+        subprocess.Popen(str(sys.executable + " " if app['runtime'] == "python" else "") + app['run'], cwd=directory,
+                         shell=True, close_fds=True)
+    except:
+        popup('Could not launch ' + display_name + ', please try again', 'Error')
+    if not app['window']:
+        popup('This app opened in terminal')
 
 
 # ---------------- Checking buttons ----------------
