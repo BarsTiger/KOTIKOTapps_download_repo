@@ -4,6 +4,7 @@ import sys
 import subprocess
 import requests
 import json
+from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder import popup
 
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
@@ -40,14 +41,13 @@ if __name__ == "__main__":
         urllib.request.urlretrieve(settingsurl, launcherfiles + "KOTIKOTlauncherSettings.py")
         urllib.request.urlretrieve(launcherversionurl, launcherfiles + "v")
 
-        subprocess.Popen(sys.executable + " KOTIKOT_launcher.py", shell=True)
+        popup("Launcher updated, please restart it")
         sys.exit(0)
 
 
 # ---------------- Launching GUI ----------------
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherMain as kkui
 import OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherSettings as kkset
-from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder import popup
 
 app = kkui.QtWidgets.QApplication(sys.argv)
 KOTIKOTlauncher = kkui.QtWidgets.QMainWindow()
