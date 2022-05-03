@@ -4,7 +4,10 @@ import sys
 import subprocess
 import requests
 import json
-from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder import popup
+try:
+    from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder import popup
+except:
+    print("[!] Error: KOTIKOTlauncherReminder.py not found, it will be downloaded")
 
 launchfolder = os.getcwd()
 offprojects = launchfolder + "/OfficialProjects/"
@@ -41,7 +44,12 @@ if __name__ == "__main__":
         urllib.request.urlretrieve(settingsurl, launcherfiles + "KOTIKOTlauncherSettings.py")
         urllib.request.urlretrieve(launcherversionurl, launcherfiles + "v")
 
-        popup("Launcher updated, please restart it")
+        try:
+            popup("Launcher updated, please restart it")
+        except:
+            from OfficialProjects.LAUNCHERFILES.KOTIKOTlauncherReminder import popup
+            popup("Launcher updated, please restart it")
+
         sys.exit(0)
 
 
